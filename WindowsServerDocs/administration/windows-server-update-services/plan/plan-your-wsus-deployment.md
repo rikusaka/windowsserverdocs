@@ -48,7 +48,7 @@ Hardware and database software requirements are driven by the number of client c
 
 - Software requirements:
 
-  - For viewing reports, WSUS requires the [Microsoft Report Viewer Redistributable 2008](https://www.microsoft.com/download/details.aspx?id=3203). On Windows Server 2016, WSUS requires [Microsoft Report Viewer Runtime 2012](https://www.microsoft.com/download/details.aspx?id=35747)
+  - For viewing reports, WSUS requires the [Microsoft Report Viewer Redistributable 2008](https://www.microsoft.com/download/details.aspx?id=3203). On Windows Server 2016, Windows Server 2019 and Windows Server 2022, WSUS requires [Microsoft Report Viewer Runtime 2012](https://www.microsoft.com/download/details.aspx?id=35747)
 
 - If you install roles or software updates that require you to restart the server when installation is complete, restart the server before you enable the WSUS server role.
 - Microsoft .NET Framework 4.0 must be installed on the server where the WSUS server role will be installed.
@@ -309,7 +309,12 @@ The **Choose Languages** page of the WSUS Configuration Wizard allows you to get
 Following are some IMPORTANT notes about the update language that you should keep in mind before configuring this option:
 
 - Always include English in addition to any other languages that are required throughout your organization. All updates are based on English language packs.
-- Downstream servers and client computers won't receive all the updates they need if you haven't selected all the necessary languages for the upstream server. Make sure you select all the languages that will be needed by all the client computers that are associated with all the downstream servers.
+- Downstream servers and client computers won't receive all the updates ![image](https://github.com/MicrosoftDocs/windowsserverdocs/assets/30655708/a7776213-4f67-4a61-85be-6e4da27a17c6)
+![image](https://github.com/MicrosoftDocs/windowsserverdocs/assets/30655708/c4e93ff9-e184-4da1-b169-7490cfd31355)
+![image](https://github.com/MicrosoftDocs/windowsserverdocs/assets/30655708/e3d8ae98-3023-4141-b3e3-122c794399ea)
+![Uploading image.png…]()
+![Uploading image.png…]()
+they need if you haven't selected all the necessary languages for the upstream server. Make sure you select all the languages that will be needed by all the client computers that are associated with all the downstream servers.
 - You should generally download updates in all languages on the root WSUS server that synchronizes to Microsoft Update. This selection guarantees that all downstream servers and client computers will receive updates in the languages that they require.
 
 If you're storing updates locally, and you have set up a WSUS server to download updates in a limited number of languages, you may notice that there are updates in languages other than the ones you specified. Many update files are bundles of several different languages, which include at least one of the languages specified on the server.
